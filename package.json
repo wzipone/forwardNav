@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "bulid": "rm -rf dist && parcel bulid src/index.html --public-url ./"
+  },
+  "name": "forwardNav-v1.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3"
+  }
+}

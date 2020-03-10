@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>前航</title>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="searchHeader">
+        <form action="https://www.baidu.com/s" method="get">
+            <input type="text" name="wd">
+            <button type="submit">搜索</button>
+        </form>
+    </header>
+
+    <main class="siteContainer">
+        <ul class="siteList">
+            <!-- <li class="site">
+                <a href="" class="link">
+                    <span class="logo">A</span>
+                    <span class="url">acfun.com</span>
+                </a>
+            </li>
+            <li class="site">
+                <a href="" class="link">
+                    <span class="logo">B</span>
+                    <span class="url">bilibili.com</span>
+                </a>
+            </li> -->
+            <li class="addCard">
+                <div class="addIcon">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-zengjia"></use>
+                    </svg>
+                </div>
+                <span class="">新增收藏</span>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="copyright">&copy;wangzipeng</footer>
+
+    <div class="layer">
+        <div class="modifyContainer">
+            <p>修改收藏网址</p>
+            <input type="text" id="siteInput">
+            <div>
+                <div class="deleteWrap"><button class="delete">删除</button></div>
+                <button class="cancel">取消</button>
+                <button class="confirm">完成</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//at.alicdn.com/t/font_1681308_ts2bor439o.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
