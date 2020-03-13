@@ -142,7 +142,7 @@ var render = function render() {
 
     var enventFn = function enventFn(e) {
       if (e.target.nodeName === 'svg' || e.target.nodeName === 'use') {
-        console.log('2');
+        $siteInput.val(siteArr[i].url);
         $layer.addClass('layerShow');
         $delete.on('click', function () {
           siteArr.splice(i, 1);
@@ -158,9 +158,8 @@ var render = function render() {
           $layer.removeClass('layerShow');
         });
       }
-    };
+    }; // console.log(isTouchDevice);
 
-    console.log(isTouchDevice);
 
     if (isTouchDevice) {
       $li.on('touchstart', enventFn);
@@ -192,12 +191,13 @@ var ampleUrl = function ampleUrl(url) {
 }; // 打开网页第一次渲染
 
 
-render();
+render(); // window.onbeforeunload = () => { // 在手机safari浏览器，没有触发
+//     localStorage.setItem('siteArr', JSON.stringify(siteArr))
+// }
 
-window.onbeforeunload = function () {
+window.addEventListener("pagehide", function () {
   localStorage.setItem('siteArr', JSON.stringify(siteArr));
-};
-
+}, false);
 $(document).on('keypress', function (e) {
   if (e.target.nodeName === 'INPUT') return;
   var key = e.key;
@@ -236,7 +236,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14257" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1502" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -413,4 +413,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["C:/Users/wzipone/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
-//# sourceMappingURL=main.1f19ae8e.js.map
+//# sourceMappingURL=/main.1f19ae8e.js.map

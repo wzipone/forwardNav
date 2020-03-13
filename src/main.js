@@ -37,7 +37,7 @@ const render = () => {
         const enventFn =(e) => {
 
             if (e.target.nodeName === 'svg' || e.target.nodeName === 'use') {
-                console.log('2');
+                $siteInput.val(siteArr[i].url)
                 $layer.addClass('layerShow')
 
                 $delete.on('click', () => {
@@ -57,7 +57,7 @@ const render = () => {
             }
         }
 
-        console.log(isTouchDevice);
+        // console.log(isTouchDevice);
         
         if(isTouchDevice){
             $li.on('touchstart', enventFn)
@@ -98,12 +98,14 @@ const ampleUrl = (url) => {
 // 打开网页第一次渲染
 render()
 
-window.onbeforeunload = () => {
+// window.onbeforeunload = () => { // 在手机safari浏览器，没有触发
+//     localStorage.setItem('siteArr', JSON.stringify(siteArr))
+// }
+window.addEventListener("pagehide", function(){
     localStorage.setItem('siteArr', JSON.stringify(siteArr))
-}
+}, false);
 
 $(document).on('keypress', (e) => {
-
     if(e.target.nodeName === 'INPUT') return
     
     const {key} = e
